@@ -8,7 +8,7 @@ const morgan = require("morgan");
 const app = express();
 
 // Body parser, reading data from body into req.body
-app.use(express.json({ limit: "10kb" }));
+app.use(express.json({limit: "10kb"}));
 
 // Development logs
 if (process.env.NODE_ENV === "development") {
@@ -28,8 +28,8 @@ process.on("uncaughtException", (err) => {
 
 // Connect to MongoDB database
 mongoose.connect(`mongodb+srv://${process.env.MONGO_ATLAS_USER}:${process.env.MONGO_ATLAS_PASSWORD}@bsm.vlluoqa.mongodb.net/Angular-Todo?retryWrites=true&w=majority`).then(() => {
-        console.log("MongoDB connected successfully!");
-    });
+    console.log("MongoDB connected successfully!");
+});
 
 
 // Get Port
